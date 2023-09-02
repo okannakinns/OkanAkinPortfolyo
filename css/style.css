@@ -947,6 +947,24 @@ section {
   background-color: #bb4343;
   color: #fff;
 }
+@media (max-width: 768px) {
+  #portfolio-flters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #portfolio-flters li {
+    flex: calc(25% - 20px); /* 4 sütunlu sıralama için genişlik ayarı - 10px boşluk bırakır */
+    max-width: calc(25% - 10px); /* Öğelerin maksimum genişliğini ayarlar */
+    margin-bottom: 10px;
+    position: relative;
+    left:-20px;
+   
+    text-align: center;
+  }
+}
+
 
 .portfolio .portfolio-item {
   margin-bottom: 30px;
