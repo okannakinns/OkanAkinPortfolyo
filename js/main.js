@@ -119,6 +119,7 @@
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
+  
 
   /**
    * Mobile nav dropdowns activate
