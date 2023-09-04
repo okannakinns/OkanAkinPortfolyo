@@ -24,7 +24,7 @@
     <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -392,7 +392,7 @@
 
           </div>
 
-          <div class="col-lg-6 fourth-box">
+          <div class="col-lg-6 info-box form-margin fourth-box" style="padding:20px;">
               <div class="row">
                 <div class="col-md-6  form-group">
                   <input type="text" name="Name" class="form-control" id="Name" placeholder="İsim" required>
@@ -408,8 +408,11 @@
                 <textarea class="form-control" name="Message" rows="6" placeholder="Mesaj" required></textarea>
               </div>
               
-              <div class="text-center"><button class="btn btn-primary" style="margin-top:5px;background-color: #bb4343; border: 1px solid #bb4343;" type="submit">Gönder</button></div>
+              <div class="text-center"><button class="btn btn-primary" id="submitButton" style="margin-top:10px;background-color: #bb4343; border: 1px solid #bb4343;" type="submit">Gönder</button></div>
               
+              <div id="errorMessage" style="margin-top:20px;display: none;">
+                 <p style="padding:15px;" class="alert alert-danger"><strong>Hata!</strong> Bu sistem şuanda kullanılamıyor.</p>
+              </div>
            
           </div>
 
@@ -457,7 +460,7 @@
             </div>
             <div class="credits">
 
-                Designed by <a href="https://www.linkedin.com/in/okan-akın-897a24229/" target="_blank">Okan Akın</a>
+                Designed by <a style="cursor: pointer;" href="https://www.linkedin.com/in/okan-akın-897a24229/" target="_blank">Okan Akın</a>
             </div>
         </div>
     </footer><!-- End Footer -->
@@ -483,7 +486,17 @@
         ScrollReveal().reveal('.third-box', { delay: 700, duration: 1000, distance: '20px', opacity: 0, scale: 0.5, easing: 'cubic-bezier(0.5, 0, 0, 1)' });
         ScrollReveal().reveal('.fourth-box', { delay: 800, duration: 1000, distance: '20px', opacity: 0, scale: 0.5, easing: 'cubic-bezier(0.5, 0, 0, 1)' });
      </script>
-
+<script>
+  $(document).ready(function(){
+ $("#submitButton").click(function(){
+  $("#errorMessage").fadeIn(500);
+setTimeout(function() {
+        $("#errorMessage").fadeOut(500);
+      }, 3000);
+ });
+ 
+  });
+</script>
 </body>
 
 </html>
